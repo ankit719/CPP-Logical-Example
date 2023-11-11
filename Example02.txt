@@ -1,0 +1,23 @@
+/*Take a number from user and pass in a function and rverse it and return*/
+#include <iostream>
+
+using namespace std;
+int REV(int n){
+    int ans=0;
+   while(n){
+       int tmp=n%10;
+       ans=ans*10+tmp;
+       n=n/10;
+   }
+    return ans;
+}
+
+int main()
+{
+    int n;
+    cout<<"enter the number "<<endl;
+    cin>>n;
+    int rev_ans=REV(n);
+    cout<<"reverse of given number is = "<<rev_ans<<endl;
+    return 0;
+}
