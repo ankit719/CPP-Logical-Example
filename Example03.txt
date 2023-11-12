@@ -1,0 +1,27 @@
+/*Take a number from user and pass in a function and check its amrstrong number or not*/
+#include <iostream>
+
+using namespace std;
+int arm(int n){
+    int ans=0;
+   while(n){
+       int tmp=n%10;
+       ans=ans+(tmp*tmp*tmp);
+       n=n/10;
+   }
+    return ans;
+}
+
+int main()
+{
+    int n;
+    cout<<"enter the number "<<endl;
+    cin>>n;
+    int arm_ans=arm(n);
+   if(n==arm_ans){
+       cout<<arm_ans<<" is amrstrong number"<<endl;
+   }else{
+        cout<<arm_ans<<" is not amrstrong number"<<endl;
+   }
+    return 0;
+}
