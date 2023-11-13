@@ -1,0 +1,26 @@
+/*Take two nuber from user and pass in a function and find its LCM and return it*/
+#include <iostream>
+
+using namespace std;
+int LCM(int a,int b){
+    int ans=0;
+    int tmp=(a<b?b:a);
+    for(int i=tmp;;i++){
+        if(i%a==0 && i%b==0){
+            ans=i;
+            break;
+        }
+    }
+    return ans;
+}
+
+int main()
+{
+    int a,b;
+    cout<<"Enter two number"<<endl;
+    cin>>a>>b;
+    int lcm_ans=LCM(a,b);
+    cout<<"LCM of both the number is = "<< lcm_ans<<endl;
+
+    return 0;
+}
