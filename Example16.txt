@@ -1,0 +1,32 @@
+// find sub string using recursion
+#include <iostream>
+#include <iostream>
+#include <string>
+using namespace std;
+
+void generateStrings(const string& characters, string currentString, int length, bool used[]) {
+    if (length == 0) {
+        cout << currentString << endl;
+        return;
+    }
+
+    for (size_t i = 0; i < characters.length(); ++i) {
+        if (!used[i]) {
+            used[i] = true;
+            string newString = currentString + characters[i];
+            generateStrings(characters, newString, length - 1, used);
+            used[i] = false;
+        }
+    }
+}
+
+int main() {
+    string characters = "ABCDE";
+    int length = 5;
+
+    bool used[5] = {false}; // Initialize an array to track used characters
+
+    generateStrings(characters, "", length, used);
+
+    return 0;
+}
