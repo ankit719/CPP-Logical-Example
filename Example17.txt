@@ -1,0 +1,25 @@
+/* You are given a string s. You need to reverse the string.
+
+Example 1:
+
+Input:
+s = Geeks
+Output: skeeG
+*/
+ 
+ string reverseWord(string str)
+    {
+        int n=str.length()-1;
+    for(int i=0;i<n;i++,--n){
+        char t=str[i];
+        str[i]=str[n];
+        str[n]=t;
+    }
+    return str;
+    }
+int main(){
+ string str="Ankit";
+string ans=reverseWord(str);
+cout<<"reverse string is="<<ans;
+
+}
