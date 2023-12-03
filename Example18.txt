@@ -1,0 +1,21 @@
+/*class object example*/
+#include <iostream>
+using namespace std;
+class student{
+    string name;
+    int age;
+    public:
+    student(string num,int age){
+        this->name=num;
+        this->age=age;
+    }
+    void show(){
+        cout<<"name= "<<name<<" "<<"age= "<<age<<endl;
+    }
+};
+int main() {
+    student s1("ankit yadav",24);
+    s1.show();
+
+    return 0;
+}
