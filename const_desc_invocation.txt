@@ -1,0 +1,81 @@
+#include<iostream>
+using namespace std;
+class c1
+{
+   public:
+       c1()
+       {
+           cout<<"inside c1 const"<<endl;
+       }
+       void disp()
+       {
+       cout<<"inside c1 dsp"<<endl;
+       }
+       ~c1()
+       {
+           cout<<"inside c1 desc"<<endl;
+       }
+
+};
+class c2:public c1
+{
+ public:
+      c2()
+       {
+           cout<<"inside c2 const"<<endl;
+       }
+    void disp()
+    {
+       cout<<"inside c2 dsp"<<endl;
+    }
+    ~c2()
+       {
+           cout<<"inside c2 desc"<<endl;
+       }
+
+};
+class c3:public c2
+{
+public:
+
+     c3()
+       {
+           cout<<"inside c3 const"<<endl;
+       }
+    void disp()
+    {
+       cout<<"inside c3 dsp"<<endl;
+    }
+    ~c3()
+       {
+           cout<<"inside c3 desc"<<endl;
+       }
+
+};
+int main()
+{
+  /*c1 *ptr=new c3();
+  ptr->disp(); //3 time const and c1 dsp*/
+
+  //c3 obj; // 3 time const and 3 time desc
+
+  //c3 *ptr=new c3; //only 3 time const
+
+  /*c3 *obj=new c3;
+  delete obj;//3 time const and 3 time desc
+  */
+
+ /* c3 *obj=new c3;
+  delete []obj;//infinite loop
+  */
+
+  /*  c3 *obj=new c3[3];
+   //delete obj[]; //error
+   delete []obj; //9 time const and then 9 time desc
+
+   */
+
+  /* c3 *obj=new c3[3];
+     delete obj; //const run 3 time but desc only once */
+
+}
