@@ -1,0 +1,33 @@
+//way of creating object
+-------------------------
+#include<iostream>
+using namespace std;
+class c1
+{
+     int num;
+ public:
+     c1()
+     {
+         cout<<"inside c1 def const"<<endl;
+     }
+     c1(int num)
+     {
+         this->num=num;
+         cout<<"inside c1 par const"<<this->num<<endl;
+     }
+      ~c1()
+     {
+         cout<<"inside c1 def desc"<<endl;
+     }
+
+};
+
+
+int main()
+{
+  c1 obj1=c1(10);
+  c1 obj2(20);
+  c1 *obj3=new c1(30);
+  c1 obj4=40;
+
+}
