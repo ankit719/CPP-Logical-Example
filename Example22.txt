@@ -1,0 +1,26 @@
+//Find some of square of N natural number
+#include <iostream>
+
+int main() {
+    // Input: N
+    int N;
+    std::cout << "Enter a positive integer N: ";
+    std::cin >> N;
+
+    // Validate input
+    if (N <= 0) {
+        std::cerr << "Please enter a positive integer." << std::endl;
+        return 1;  // Exit with an error code
+    }
+
+    // Calculate the sum of squares
+    int sumOfSquares = 0;
+    for (int i = 1; i <= N; ++i) {
+        sumOfSquares += i * i;
+    }
+
+    // Output the result
+    std::cout << "The sum of squares of the first " << N << " natural numbers is: " << sumOfSquares << std::endl;
+
+    return 0;  // Exit successfully
+}
